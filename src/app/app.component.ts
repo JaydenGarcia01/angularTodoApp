@@ -45,8 +45,12 @@ export class AppComponent {
     this.todos[index] = prompt('please write new todo');
   }
 
-  deleteTodo() {
+  deleteTodo(chore) {
+    console.log('CHORE THAT WAS CLICKED: ' + chore);
+    let index = this.todos.indexOf(chore);
+    console.log('INDEX OF THAT CHORE: ' + index);
 
+    this.todos.splice(index,1);
   }
 }
 

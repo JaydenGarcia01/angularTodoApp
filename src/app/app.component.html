@@ -4,15 +4,14 @@
       <h1 class="text-center mt-5">{{ name }}'s Todo List</h1>
     </div>
   </div>
-  <p *ngFor="let chore of todos"> {{ chore }}
-    <i class="fas fa-pencil-alt" (click)="editTodos(chore)"></i>
+  <p *ngFor="let chore of todos"> <i class="fas fa-pencil-alt" (click)="editTodo(chore)"></i> {{ chore }} <i class="fas fa-times-circle" (click)="deleteTodo(chore)"></i>
 
   </p>
 
   <div class="row">
     <div class="col">
       <input [(ngModel)]="todoInput">
-      <button class="btn btn-danger" (click)="createTodo()">Click to see what i typed in</button>
+      <button class="btn btn-danger" (click)="createTodo()">Click to see what I typed in</button>
     </div>
   </div>
 </div>
@@ -23,3 +22,5 @@
 <button(click)="myFunction()" class="btn btn-primary">Click Me!!</button>
   </div>
 </div> -->
+
+<!-- <i class="fas fa-times-circle"></i> -->
