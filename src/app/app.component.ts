@@ -6,5 +6,50 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  todoInput = ' ';
+  name = 'Jayden';
+  todos = [
+    'eat',
+    'drink',
+    'sleep'
+  ];
+
+  completeAllTodos() {
+
+  }
+
+  textFunction() {
+
+  }
+
+  deleteAllTodos() {
+
+  }
+
+  completeTodo() {
+
+  }
+
+  createTodo() {
+    // pushes text i wrote into todo array
+    this.todos.push(this.todoInput);
+    // clear out that input
+    this.todoInput = "";
+  }
+
+  editTodo(chore) {
+    console.log('CHORE THAT WAS CLICKED: ' + chore);
+    let index = this.todos.indexOf(chore);
+    console.log('INDEX OF THAT CHORE: ' + index);
+
+    this.todos[index] = prompt('please write new todo');
+  }
+
+  deleteTodo() {
+
+  }
 }
+
+// myFunction() {
+//   console.log('I have been clicked!!');
+// }
