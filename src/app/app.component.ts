@@ -8,11 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   todoInput = ' ';
   name = 'Jayden';
-  todos = [
-    'eat',
-    'drink',
-    'sleep'
-  ];
+  todos = [];
 
   completeAllTodos() {
 

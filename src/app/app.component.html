@@ -1,22 +1,30 @@
-<div class="container-fluid text-center">
-  <div class="row">
-    <div class="col">
-      <h1 class="text-center mt-5">{{ name }}'s Todo List</h1>
+<body>
+  <section class="dash">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center mt-5">{{ name }}'s Todo List</h1>
+        </div>
+        <hr>
+      </div>
+      <p *ngFor="let chore of todos">
+        <i class="fas fa-pencil-alt" (click)="editTodo(chore)"></i> {{ chore }}
+        <i class="fas fa-times-circle" (click)="deleteTodo(chore)"></i>
+
+      </p>
+
+      <div class="row">
+        <div class="col">
+          <input [(ngModel)]="todoInput">
+          <br>
+          <button class="btn btn-danger mt-3" (click)="createTodo()">Click To Add Task</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <p *ngFor="let chore of todos"> <i class="fas fa-pencil-alt" (click)="editTodo(chore)"></i> {{ chore }} <i class="fas fa-times-circle" (click)="deleteTodo(chore)"></i>
+  </section>
+</body>
 
-  </p>
-
-  <div class="row">
-    <div class="col">
-      <input [(ngModel)]="todoInput">
-      <button class="btn btn-danger" (click)="createTodo()">Click to see what I typed in</button>
-    </div>
-  </div>
-</div>
-
-  <!-- 
+<!-- 
 <div class="row">
   <div class="col text-center">
 <button(click)="myFunction()" class="btn btn-primary">Click Me!!</button>
