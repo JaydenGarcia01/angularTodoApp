@@ -14,13 +14,14 @@ export class AppComponent {
     this.todos = [];
   }
 
-  // completeTodo() {
-
-  // }
+  checkOffTodo(chore) {
+    chore.IsChecked = !chore.isChecked;
+  }
 
   createTodo() {
     let trimmedInput = this.todoInput.trim();
     if(trimmedInput != "") {
+
       this.todos.push({
         isChecked: false,
         name: this.todoInput

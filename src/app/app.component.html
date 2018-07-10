@@ -8,13 +8,15 @@
         <hr>
       </div>
       <p *ngFor="let chore of todos"> 
-        <!-- <i *ngIf="todo.isChecked === false" class="far fa-square"></i>
-        <i *ngIf="todo.isChecked === true" class="far fa-check-square"></i> -->
-        {{ chore.name }}
+        <!-- <i *ngIf="chore.isChecked === false"  (click)="checkOffTodo(chore)" class="far fa-square mr-3"></i>
+        <i *ngIf="chore.isChecked === true" (click)="checkOffTodo(chore) "class="far fa-check-square mr-3"></i> -->
+       
         <i class="fas fa-pencil-alt" (click)="editTodo(chore)"></i> 
         <i class="fas fa-times-circle" (click)="deleteTodo(chore)"></i>
 
-          <input type="checkbox" [(ngModel)]="todo.isChecked">
+        <input type="checkbox" [(ngModel)]="chore.isChecked">
+
+        <span [ngClass]='{"strike": chore.isChecked}'>{{chore.name}}</span>
 
       </p>
 
