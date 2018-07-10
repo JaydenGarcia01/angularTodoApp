@@ -10,21 +10,21 @@ export class AppComponent {
   name = 'Jayden';
   todos = [];
 
-  completeAllTodos() {
+  // completeAllTodos() {
 
-  }
+  // }
 
-  textFunction() {
+  // textFunction() {
 
-  }
+  // }
 
   deleteAllTodos() {
     this.todos = [];
   }
 
-  completeTodo() {
+  // completeTodo() {
 
-  }
+  // }
 
   createTodo() {
     // pushes text i wrote into todo array
@@ -38,7 +38,13 @@ export class AppComponent {
     let index = this.todos.indexOf(chore);
     console.log('INDEX OF THAT CHORE: ' + index);
 
-    this.todos[index] = prompt('please write new todo');
+    let tempTodoDesc = this.todos[index];
+    
+    this.todos[index] = prompt('please write new todo', this.todos[index]);
+    if (this.todos[index] == null) {
+      this.todos[index] == tempTodoDesc;
+    }
+      console.log(this.todos[index]);
   }
 
   deleteTodo(chore) {
