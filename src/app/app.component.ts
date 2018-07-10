@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   deleteAllTodos() {
-
+    this.todos = [];
   }
 
   completeTodo() {

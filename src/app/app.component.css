@@ -10,3 +10,8 @@ height: 200vh;
     border-width: 2px;
     border-color: black;
 }
+
+.btn-orange {
+    background: orange;
+    color: white;
+}
