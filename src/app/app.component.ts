@@ -7,16 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   todoInput = ' ';
-  name = 'Jayden';
+  id = 'Jayden';
   todos = [];
-
-  // completeAllTodos() {
-
-  // }
-
-  // textFunction() {
-
-  // }
 
   deleteAllTodos() {
     this.todos = [];
@@ -27,8 +19,16 @@ export class AppComponent {
   // }
 
   createTodo() {
+    let trimmedInput = this.todoInput.trim();
+    if(trimmedInput != "") {
+      this.todos.push({
+        isChecked: false,
+        name: this.todoInput
+      });
+    }
+
     // pushes text i wrote into todo array
-    this.todos.push(this.todoInput);
+    // this.todos.push(this.todoInput);
     // clear out that input
     this.todoInput = "";
   }
@@ -38,13 +38,13 @@ export class AppComponent {
     let index = this.todos.indexOf(chore);
     console.log('INDEX OF THAT CHORE: ' + index);
 
-    let tempTodoDesc = this.todos[index];
-    
-    this.todos[index] = prompt('please write new todo', this.todos[index]);
-    if (this.todos[index] == null) {
-      this.todos[index] == tempTodoDesc;
+    let oldTodo = this.todos[index].name;
+
+    this.todos[index].name = prompt('please write new todo', this.todos[index].name);
+    if (this.todos[index].name == null) {
+      this.todos[index].name == oldTodo;
     }
-      console.log(this.todos[index]);
+      // console.log(this.todos[index].name);
   }
 
   deleteTodo(chore) {
